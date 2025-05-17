@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'MontserratExtraBold';
+    src: url('./assets/font/Montserrat-ExtraBold.woff2') format('woff2'),
+        url('./assets/font/Montserrat-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MontserratBold';
+    src: url('./assets/font/Montserrat-Bold.woff2') format('woff2'),
+        url('./assets/font/Montserrat-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MontserratSemiBold';
+    src: url('./assets/font/Montserrat-SemiBold.woff2') format('woff2'),
+        url('./assets/font/Montserrat-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/font/Montserrat-Regular.woff2') format('woff2'),
+        url('./assets/font/Montserrat-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@layer base {
+
+    ::selection {
+        @apply bg-primary text-siteWhite;
+    }
+
+    html, body {
+        @apply font-Montserrat text-siteBlack bg-siteWhite scroll-smooth;
+    }
+
+    input, select, textarea {
+        @apply border border-siteWhite bg-primary bg-opacity-15 rounded-md p-3;
+    }
+
+    input::placeholder, select::placeholder {
+        @apply text-slate-600;
+    }
+
+    .border {
+        @apply border-siteBlack;
+    }
+
+    button {
+        @apply select-none;
+    }
+}
+
+main {
+    /* background-image: url("./assets/images/hero-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center; */
+    background-image: radial-gradient(#00000055 1px, transparent 0);
+    background-size: 16px 16px;
+}
+
+.hero-section .heroContent,
+.projectsAnimate .project {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all ease 1s;
+}
+
+.skillsAnimate .skillPill,
+.aboutAnimate .aboutProfile .profileLinks {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all ease 0.7s;
+}
+
+.aboutAnimate .aboutProfile .profilImage,
+.aboutAnimate .aboutTxt {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all ease 0.7s;
+}
+
+.hero-section.scrollAnimate .heroContent,
+.skillsAnimate.scrollAnimate .skillPill,
+.aboutAnimate .aboutProfile.scrollAnimate .profilImage,
+.aboutAnimate .aboutProfile.scrollAnimate .profileLinks,
+.aboutAnimate .aboutTxt.scrollAnimate,
+.projectsAnimate .project.scrollAnimate {
+    opacity: 1;
+    transform: initial;
+}
+
+.svg-logo text {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: drawText 10s linear both;
+}
+
+@keyframes drawText {
+    0% {
+        stroke-dashoffset: 500
+    }
+
+    to {
+        stroke-dashoffset: 0
+    }
+}
