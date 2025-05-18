@@ -51,8 +51,8 @@ const About = () => {
             <div ref={refProfile} className='flex gap-5 items-center aboutProfile'>
                
             </div>
-            <div ref={profileAbout} className='text-xl aboutTxt flex flex-wrap gap-5'>
-               <p> I'm a web developer who loves what I do, and I've hands-on experience and specialize in creating user-friendly and visually appealing websites using the latest technologies. I'm well-versed in JavaScript, React, and Node.js, which allows me to build dynamic and responsive web applications.</p>
+            <div ref={profileAbout} className='text-xl aboutTxt grid lg:grid-cols-2 gap-5'>
+                <p>Hi, I'm a passionate and results-driven Lead Front-end Developer with over <strong>9+ years</strong> of experience crafting intuitive, responsive, and high-performance web applications. I specialize in technologies like HTML5, CSS3, SASS/LESS, jQuery, Tailwind CSS, Bootstrap, and React.js. I’ve had the opportunity to work with platforms like Magento, WordPress, Odoo, Shopify and Drupal, bringing both creativity and efficiency to every project.</p>
                 <p>Currently leading a front-end team at Ewall Solutions Pvt. Ltd., I take pride in mentoring developers, collaborating across disciplines, and delivering pixel-perfect UI solutions that align with business goals. My approach blends clean code, user-centric design, and scalable architecture to build web interfaces that not only look great but perform flawlessly.</p>
             </div>
         </div>
