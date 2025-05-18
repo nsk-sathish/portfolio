@@ -1,36 +1,12 @@
 import React, { useState, useRef } from 'react';
-import emailjs from '@emailjs/browser';
-import { FaPaperPlane } from "react-icons/fa";
-import { ImSpinner2 } from "react-icons/im";
+import { FaSquareGithub, FaLinkedin, FaSquareInstagram, FaArrowDownLong, FaRegUser, FaSquareFacebook } from "react-icons/fa6";
+
 
 const Contact = () => {
-  
-    const [mailLoading, setMailLoading] = useState(false);
-    const form = useRef();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault(); 
-        setMailLoading(true);
-        
-        try {
-          const result = await emailjs.sendForm(
-            import.meta.env.VITE_EJS_SERVICE_ID, 
-            import.meta.env.VITE_EJS_TEMPLATE_ID, 
-            form.current, 
-            { publicKey: import.meta.env.VITE_EJS_PUB_KEY }
-          );
-          console.log('SUCCESS!', result.text);
-        } catch (error) {
-          console.log('FAILED...', error.text);
-        } finally {
-          setMailLoading(false);
-        }
-    }
-
-    console.log(mailLoading)
     return (
-    <div className='mt-5 py-5 bg-siteBlack rounded-tl-[75px] rounded-tr-[75px] sm:rounded-tl-[150px] sm:rounded-tr-[150px] text-siteWhite'>
-        <div className="container">
+    <div className='mt-5 p-4 bg-white'>
+        {/* <div className="container">
             <h2 className='mt-5 text-3xl xs:text-4xl sm:text-5xl font-MontserratBold uppercase text-center'>GET IN TOUCH</h2>
             <div className='mt-5 mx-auto md:w-2/4'>
                 <form className='space-y-5' ref={form} onSubmit={handleSubmit}>
@@ -74,6 +50,20 @@ const Contact = () => {
                     </button>
                 </form>
             </div>
+        </div> */}
+        <div className='flex gap-5 justify-between items-center'>
+          <div className=''>Get in touch</div>
+          <div className='contact-us flex gap-5'>  
+            <a href='https://www.facebook.com/share/15wKEiSMki/' target='_blank'>
+                <FaSquareFacebook className='fill-siteBlack hover:fill-primary size-7 xs:size-8' />
+            </a>
+            <a href='https://www.linkedin.com/in/sathishkumar-n-516b6a210/' target='_blank'>
+                <FaLinkedin className='fill-siteBlack hover:fill-primary size-7 xs:size-8' />
+            </a>
+            <a href="https://www.instagram.com/sathish_n_sk/?igsh=Nm1iNndoMDMydTl2" target='_blank'>
+                <FaSquareInstagram className='fill-siteBlack size-7 xs:size-8' />
+            </a>
+          </div>
         </div>
     </div>
   )

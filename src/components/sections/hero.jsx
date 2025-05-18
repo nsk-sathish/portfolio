@@ -3,7 +3,7 @@ import cv from '../../assets/documents/Sathishkumar_N_resume.pdf'
 import { FaSquareGithub, FaLinkedin, FaSquareInstagram, FaArrowDownLong, FaRegUser } from "react-icons/fa6";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { TypeAnimation } from 'react-type-animation';
-
+import dev_img from "../../assets/images/dev_image.jpg"
 const Hero = () => {
 
   const [isInterSecting, setInterSecting] = useState(false);
@@ -18,7 +18,7 @@ const Hero = () => {
     HeroObserver.observe(ref.current);
 
     return () => {
-      HeroObserver.unobserve(ref.current);
+      // HeroObserver.unobserve(ref.current);
     }
     
   }, [isInterSecting])
@@ -34,8 +34,8 @@ const Hero = () => {
   }
 
   return (
-    <div ref={ref} className='hero-section'>
-      <div className='container flex justify-between gap-4 items-center h-[calc(100vh-70px)]'>
+    <div ref={ref} className='hero-section pb-10 pt-10 md:pt-0'>
+      <div className='container flex justify-center md:justify-between flex-wrap gap-4 items-center h-full md:h-[calc(100vh-70px)]'>
         <div className='flex justify-center flex-col heroContent'>
           <h1 className='text-4xl xs:text-5xl sm:text-6xl font-MontserratBold leading-tight'>
             Hi, I'm Sathishkumar
@@ -58,19 +58,8 @@ const Hero = () => {
             <a className='text-xl inline-flex items-center gap-3 uppercase italic py-2 px-4 border rounded-full hover:bg-siteBlack hover:text-siteWhite transition-all font-MontserratSemiBold' href={cv} target='_blank' download={true}><span>Download CV</span> <FaExternalLinkAlt /></a>
           </div>
         </div>
-        <div className='space-y-5 grid'>
-          <a href='https://github.com/Afree-dev' target='_blank'>
-            <FaSquareGithub className='fill-siteBlack hover:fill-primary size-7 xs:size-8' />
-          </a>
-          <a href='https://www.linkedin.com/in/sathishkumar-n-516b6a210/' target='_blank'>
-            <FaLinkedin className='fill-siteBlack hover:fill-primary size-7 xs:size-8' />
-          </a>
-          <a  href="#" className='cursor-not-allowed pointer-events-none'>
-            <FaSquareInstagram className='fill-siteBlack size-7 xs:size-8' />
-          </a>
-          <button type='button' onClick={scrollToSkill} className='grid place-items-center p-1 border py-4 rounded-full'>
-            <FaArrowDownLong className='animate-bounce' />
-          </button>
+        <div className='py-5 md:py-0 max-w-[250px] md:max-w-[300px]'>
+          <img className="rounded-[50%]" src={dev_img} alt="" />
         </div>
       </div>
     </div>
