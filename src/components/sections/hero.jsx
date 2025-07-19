@@ -1,5 +1,5 @@
-import {  React, useState, useRef, useEffect } from 'react'
-import cv from '../../assets/documents/Sathishkumar_N_resume.pdf'
+import {  React, useState, useRef, useEffect } from 'react';
+import cv from '../../assets/documents/Sathishkumar-N.pdf';
 import { FaSquareGithub, FaLinkedin, FaSquareInstagram, FaArrowDownLong, FaRegUser } from "react-icons/fa6";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { TypeAnimation } from 'react-type-animation';
